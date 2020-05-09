@@ -11,5 +11,5 @@
 
   *To Do more*
   - Finish Reset Password
-  - Delete Events and all subDocuments
+  - Delete Events with all subDocuments ( now work only for the Event )
   
