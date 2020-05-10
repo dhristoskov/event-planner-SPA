@@ -4,9 +4,16 @@ const { check } = require('express-validator');
 const eventController = require('../controllers/events-controller');
 const router = express.Router();
 
+//Get eveny by ID
 router.get('/:id', eventController.getEventById);
+
+//Get event by Users ID
 router.get('/user/:id', eventController.getEventsByUserID);
+
+//Delete event by ID
 router.delete('/:id', eventController.deleteEvent);
+
+//Update event
 router.patch('/:id',
     [
         check('title', 'Please enter a valid title').not().isEmpty().isLength({min: 3}).trim(),
@@ -22,7 +29,11 @@ router.patch('/:id',
     ], 
     eventController.updateEvent
 );
+
+//Update only Event status property
 router.patch('/status/:id', eventController.statusUpdate)
+
+//Post Event
 router.post('/', 
     [
         check('title', 'Please enter a valid title').not().isEmpty().isLength({min: 3}).trim(),
