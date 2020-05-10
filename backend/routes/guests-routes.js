@@ -4,8 +4,13 @@ const { check } = require('express-validator');
 const guestController = require('../controllers/guests-controller');
 const router = express.Router();
 
+//Get guest by ID
 router.get('/:id', guestController.getGuestById);
+
+//Get all guests in Event
 router.get('/event/:id', guestController.getGuestsByEventId);
+
+//Add/Post new Guest 
 router.post('/', 
     [
         check('firstName', 'Please enter a valid first name').not().isEmpty().isLength({min: 2}).trim(),
@@ -15,7 +20,11 @@ router.post('/',
     ],
     guestController.addNewGuest
 );
+
+//Delete guest by ID
 router.delete('/:id', guestController.deleteGuest);
+
+//Update Guest 
 router.patch('/:id',
     [
         check('firstName', 'Please enter a valid first name').not().isEmpty().isLength({min: 2}).trim(),
@@ -25,6 +34,8 @@ router.patch('/:id',
     ],
     guestController.updateGuest
 );
+
+//Update only Guest status
 router.patch('/status/:id', guestController.updateStatus);
 
 
