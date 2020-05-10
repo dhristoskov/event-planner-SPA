@@ -4,6 +4,8 @@ const { check } = require('express-validator');
 const userController = require('../controllers/users-controller');
 const router = express.Router();
 
+
+//Registe new User and Validate input data
 router.post('/register',
     [
         check('name', 'Please provide a name').not().isEmpty().isLength({ min: 4 }).trim(),
@@ -13,6 +15,7 @@ router.post('/register',
     userController.registerUser
 );
 
+//Login a User and Validate input Data
 router.post('/login',
     [
         check('email', 'Please provide an email').isEmail().not().isEmpty().isLength({ min: 6 }).normalizeEmail(),
