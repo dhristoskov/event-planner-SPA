@@ -1,0 +1,21 @@
+
+.toggle-btn {
+    margin: 10px auto 30px auto ;
+    display: block;
+    padding: 12px;
+    border-radius: 15px;
+    background-color: transparent;
+    outline: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+    color: $primatyColorOrange;
+    border: 2px solid $primatyColorOrange;
+    box-shadow: 3px 2px 5px 0px #002141;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+    &:hover{
+        color: $primatyColorBlue;
+        border: 2px solid $primatyColorBlue;
+    }
+}

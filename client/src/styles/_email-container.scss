@@ -1,0 +1,57 @@
+.email-container {
+    color: $primatyColorBlue;
+    min-height: 360px;
+    & .settings-btn {
+        text-align: end;
+        font-size: 18px;
+        font-weight: 700;
+        margin-bottom: 15px;
+        color: $primatyColorBlue;
+        cursor: pointer;
+    }
+    & h1 {
+        text-align: center;
+        letter-spacing: 1px;
+        font-size: 22px;
+        font-weight: 700;      
+    }
+    & .email-form {
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+        margin: auto;
+        & input[type=text]{
+            padding: 15px 15px 2px 5px;
+            margin-bottom: 10px;
+            border: none;
+            outline: none;
+            border-bottom: 2px solid $primatyColorOrange;
+        }
+        & textarea{
+            outline: none;
+            padding: 2px;
+            resize: vertical;
+            max-height: 150px;
+            border: 2px solid $primatyColorOrange;
+        }
+        & input[type=submit]{
+            margin: 15px 0;
+            padding: 12px;
+            border-radius: 15px;
+            background-color: transparent;
+            outline: none;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 700;
+            color: $primatyColorOrange;
+            border: 2px solid $primatyColorOrange;
+            box-shadow: 3px 2px 5px 0px #002141;
+            cursor: pointer;
+            transition: all .3s ease-in-out;
+            &:hover{
+                color: $primatyColorBlue;
+                border: 2px solid $primatyColorBlue;
+            }
+        }
+    }
+}

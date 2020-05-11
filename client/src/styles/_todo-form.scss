@@ -1,0 +1,71 @@
+.todo-form-wrapper {
+    width: 380px;
+    color: $primatyColorBlue;
+    margin:30px auto;
+    & .close-btn {
+        text-align: end;
+        font-size: 22px;
+        cursor: pointer;
+    }
+    & h1 {
+        text-align: center;
+        letter-spacing: 1px;
+        font-size: 22px;
+        font-weight: 700;      
+    }
+    & .todo-form {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        & input[type=text]{
+            padding: 15px 15px 2px 5px;
+            margin-bottom: 10px;
+            border: none;
+            outline: none;
+            border-bottom: 2px solid $primatyColorOrange;
+        }
+        & div{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            & input[type="date"]{
+                align-self: center;
+                text-align: center;
+                width: 49%;
+                background-color:transparent;
+                border: none;
+                border-bottom: 2px solid $primatyColorOrange;
+                padding: 30px 5px 2px 5px;
+                margin-bottom: 10px;
+                outline: none;
+            }
+            & input[type=submit]{
+                width: 49%;
+                margin: 15px auto;
+                padding: 12px;
+                border-radius: 15px;
+                background-color: transparent;
+                outline: none;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                font-weight: 700;
+                color: $primatyColorOrange;
+                border: 2px solid $primatyColorOrange;
+                box-shadow: 3px 2px 5px 0px #002141;
+                cursor: pointer;
+                transition: all .3s ease-in-out;
+                &:hover{
+                    color: $primatyColorBlue;
+                    border: 2px solid $primatyColorBlue;
+                }
+            }
+        }
+    }
+}
+
+
+@media (max-width: 420px) {
+    .todo-form-wrapper{
+        width: 90%;
+    }
+}

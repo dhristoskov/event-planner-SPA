@@ -1,0 +1,20 @@
+.auth-header {
+    padding: 5px 35px;
+    display: flex;
+    justify-content: flex-start;
+    border-bottom: 1px solid $primatyColorOrange;
+    & p {
+        color: $primatyColorBlue;
+        font-size: 14px;
+        font-weight: 600;
+        & span {
+            margin-right: 1px;
+        }
+    }
+}
+
+@media (max-width: 420px) {
+    .auth-header {
+        justify-content: center;
+    }
+}

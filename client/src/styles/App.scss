@@ -1,0 +1,120 @@
+@import './global';
+@import './button';
+@import './main-header';
+@import './sideBar';
+@import './backdrop';
+@import './auth-modal';
+@import './auth';
+@import './empty-event';
+@import './event-form';
+@import './event-card';
+@import './layout';
+@import './deleteWarning';
+@import './todo-card';
+@import './todo-form';
+@import './loader';
+@import './guest-card';
+@import './guest-form';
+@import './toggle-button';
+@import './event-detail';
+@import './pagination';
+@import './auth-header';
+@import './email-container';
+@import './reset-container';
+
+.background {
+    padding: 15px 0;
+    height: 100vh;
+    width: auto;
+    background-image: url('../assets/Liquid.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    & .site-title{
+        margin-top: 100px;
+        text-align: center;
+        & h1{
+            font-size: 46px;
+            font-weight: 700;
+            color: $primatyColorOrange;
+            letter-spacing: 1px;
+        }
+        & p{
+            font-size: 16px;
+            font-weight: 700;
+            margin-top: 10px;
+            letter-spacing: 2px;
+            color: $primatyColorBlue;
+        }
+    }
+    & section {
+        display: flex;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        margin: 100px;
+        & .info-form{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            & p{
+                font-size: 16px;
+                font-weight: 600;
+                text-transform: uppercase;
+                color: $primatyColorBlue;
+                cursor: pointer;
+                transition: all .3s ease-in-out;
+                &:hover{
+                    color: $primatyColorOrange;                   
+                }
+            }
+            & i {     
+                margin-top: 15px;       
+                font-size: 65px;
+            }
+        }
+    }
+    & .create-btn{
+        text-align: center;
+        & button {
+           background-color: transparent;    
+           padding: 15px;      
+           font-size: 14px;
+           font-weight: 600;
+           text-transform: uppercase;
+           border: 2px solid $primatyColorBlue;
+           box-shadow: 3px 2px 5px 0px #002141;
+           cursor: pointer;
+           outline: none;
+           letter-spacing: 1px;
+           border-radius: 15px;
+           color: $primatyColorBlue;
+           transition: all .3s ease-in-out;
+                &:hover{
+                    color: $primatyColorOrange; 
+                    border: 2px solid $primatyColorOrange;                  
+                }
+        }
+    }
+}
+
+
+@media (max-width: 420px) {
+    .background {
+        & .site-title{
+            margin-top: 50px;
+            & h1{
+                font-size: 30px;
+                font-weight: 500;
+            }
+            & p{
+                font-size: 14px;
+                font-weight: 500;
+            }
+        }
+        & section {
+            margin:20px;
+        }
+    }
+}
+
+

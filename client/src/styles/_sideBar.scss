@@ -1,0 +1,36 @@
+.sidebar-nav {
+    position: fixed;
+    z-index: 30;
+    top: 25%;
+    left: 10px;
+    width: 80px;
+    height: 350px;
+    padding: 0 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    background-color:rgba(255, 255, 255, 0.80);
+    align-items: center;
+    align-content: center;
+    & li {
+        list-style: none;       
+        font-size: 30px;
+        cursor: pointer;      
+        & a{
+            text-decoration: none;
+            color: $primatyColorBlue;
+            transition: all 0.3s ease-in-out;
+            &:hover,
+            &.active {
+                color: $primatyColorOrange;
+            }
+        }
+    }
+}
+
+@media (max-width: 420px) {
+    .sidebar-nav {
+        width: 20%;
+    }
+}
+

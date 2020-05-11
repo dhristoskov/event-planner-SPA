@@ -1,0 +1,90 @@
+.guest-form-wrapper {
+    width: 380px;
+    color: $primatyColorBlue;
+    margin:30px auto;
+    & .close-btn {
+        text-align: end;
+        font-size: 22px;
+        cursor: pointer;
+    }
+    & h1 {
+        text-align: center;
+        letter-spacing: 1px;
+        font-size: 22px;
+        font-weight: 700;      
+    }
+    & .guest-form{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        & input[type=text],
+          input[type=email]{
+            padding: 15px 15px 2px 5px;
+            margin-bottom: 10px;
+            border: none;
+            outline: none;
+            border-bottom: 2px solid $primatyColorOrange;
+        }
+        & div{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            & input[type='number'] {
+                text-align: center;
+                width: 48%;
+                background-color:transparent;
+                border: none;
+                border-bottom: 2px solid $primatyColorOrange;
+                padding: 15px 5px 2px 5px;
+                margin-bottom: 10px;
+                outline: none;
+            }
+            & .guest-radio {
+                width: 49%;
+                display: flex;
+                align-items: center;
+                padding: 20px 5px 2px 5px;
+                margin-bottom: 10px;
+                outline: none;
+                color:  $primatyColorBlue;
+                font-size: 14px;
+                font-weight: 600;
+                justify-content: space-around;
+                & label{
+                    display: flex;
+                    align-items: center;
+                    & input[type='radio']{
+                        margin-left: 5px;
+                        height: 18px;
+                        width: 18px;
+                    }
+                }
+            }
+        }
+        & input[type=submit]{
+            margin: 15px 0;
+            padding: 12px;
+            border-radius: 15px;
+            background-color: transparent;
+            outline: none;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 700;
+            color: $primatyColorOrange;
+            border: 2px solid $primatyColorOrange;
+            box-shadow: 3px 2px 5px 0px #002141;
+            cursor: pointer;
+            transition: all .3s ease-in-out;
+            &:hover{
+                color: $primatyColorBlue;
+                border: 2px solid $primatyColorBlue;
+            }
+        }
+    }
+}
+
+@media (max-width: 420px) {
+    .guest-form-wrapper{
+        width: 90%;
+    }
+}

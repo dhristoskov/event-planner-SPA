@@ -1,0 +1,118 @@
+.event-card {
+    position: relative;
+    width: 550px;
+    margin: 0 auto;
+    padding: 15px 25px;
+    color: $primatyColorBlue;
+    box-shadow: 3px 2px 5px 0px #002141;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    border: 2px solid $primatyColorBlue;
+    & h3 {
+        text-align: center;
+        font-size: 22px;
+        color: $primatyColorOrange;
+    }
+    & .event-title{
+       position: absolute;
+       cursor: pointer;
+       top: 20px;
+       right: 25px;
+       display: flex;
+       align-items: center;
+       font-size: 18px;
+       color: $primatyColorOrange;
+       transition: all .3s ease-in-out;
+       & span {
+           text-transform: uppercase;
+           font-size: 12px;
+           margin-left: 5px;
+       }
+       &:hover {
+           color: $primatyColorBlue;
+       }
+    }
+    & .card-info {
+        margin: 10px 0 15px 0;
+        display: flex;
+        justify-content: space-between;      
+        & p{
+            font-weight: 700;
+            & span {
+                font-weight: 400;
+            }
+        }
+    }
+    & .card-info-middle {
+        margin-bottom: 5px;
+        display: flex;
+        justify-content: space-between;
+        & p{
+            font-weight: 700;
+            & span {
+                font-weight: 400;
+            }
+        }
+        & .status-opne, 
+          .status-close{
+            background: transparent;
+            border: none;
+            color: green;
+            font-size: 14px;
+            font-weight: 700;
+            outline: none;
+            cursor: pointer;
+        }
+        & .status-close {
+            color: red;
+        }
+    }
+    & .card-btns{
+        display: flex;
+        justify-content: center;
+        & button {
+            margin: 5px 0;
+            padding: 5px;
+            margin-right: 20px;
+            min-width: 80px;
+            background: transparent;
+            text-transform: uppercase;
+            font-size: 14px;
+            font-weight: 700;
+            color: $primatyColorOrange;
+            border: 2px solid $primatyColorOrange;
+            box-shadow: 3px 2px 5px 0px #002141;
+            border-radius: 15px;
+            outline: none;
+            cursor: pointer;
+            transition: all .3s ease-in-out;
+            &:hover {
+                color: $primatyColorBlue;
+                border: 2px solid $primatyColorBlue;
+            }
+        }
+    }
+}
+
+
+@media (max-width: 420px) {
+    .event-card {
+        width: 300px;
+        font-size: 14px;
+        & h3 {
+            font-size: 18px;
+        }
+        & .card-info {
+            & p {
+                text-align: center;
+            }   
+        }
+        & .event-title{
+            position: absolute;
+            cursor: pointer;
+            top: 7px;
+            right: 7px;
+            font-size: 14px;
+         }
+    }
+}

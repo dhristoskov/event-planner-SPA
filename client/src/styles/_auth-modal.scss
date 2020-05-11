@@ -1,0 +1,19 @@
+.auth-modal {
+    position: fixed;
+    z-index: 100;
+    background-color: white;
+    border-radius: 15px;
+    width: 30%;
+    border: 2px solid $primatyColorBlue;
+    box-shadow: 1px 1px 1px black;
+    padding: 16px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@media (max-width: 420px) {
+    .auth-modal { 
+       width: 80%;
+    }
+}

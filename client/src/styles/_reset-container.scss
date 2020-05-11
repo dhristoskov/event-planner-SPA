@@ -1,0 +1,59 @@
+.reset-container {
+    color: $primatyColorBlue;
+    width: 360px;
+    margin: 50px auto;
+    & p {
+        text-align: center;
+        font-size: 16px;
+        font-weight: 700;
+        width: 65%;
+        margin: 15px auto;
+    }
+    & .reset-form {
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+        margin: auto;
+        & input[type=password]{
+            padding: 15px 15px 2px 5px;
+            margin-bottom: 10px;
+            border: none;
+            outline: none;
+            border-bottom: 2px solid $primatyColorOrange;
+        }
+        & .toggleVisibal {
+            position: relative;
+            & input[type=text],
+              input[type=password]{
+                width: 100%;
+            }
+            & .iconVisibility{
+                position: absolute;
+                bottom: 12px;
+                right: 6px;
+                font-size: 18px;
+            }
+        }
+    }
+    & input[type=submit]{
+        margin: 15px 0;
+        padding: 12px;
+        border-radius: 15px;
+        background-color: transparent;
+        outline: none;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-weight: 700;
+        color: $primatyColorOrange;
+        border: 2px solid $primatyColorOrange;
+        box-shadow: 3px 2px 5px 0px #002141;
+        cursor: pointer;
+        transition: all .3s ease-in-out;
+        &:hover{
+            color: $primatyColorBlue;
+            border: 2px solid $primatyColorBlue;
+        }
+    }
+}
+
+

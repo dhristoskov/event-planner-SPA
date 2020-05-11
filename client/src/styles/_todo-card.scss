@@ -1,0 +1,38 @@
+.todo-container {
+    display: flex;
+    align-items: center;
+    width: 380px;
+    padding: 10px;
+    margin:0 auto 10px auto;
+    border-radius: 15px;
+    color: $primatyColorBlue;
+    box-shadow: 3px 2px 5px 0px #002141;
+    border: 2px solid $primatyColorBlue;
+    & .todo-info {
+        width: 85%;
+        margin-right: 15px;
+        font-size: 16px;
+        font-weight: 500;
+    }
+    & .todo-buttons {
+        display: flex;
+        flex-direction: column;
+        width: 15%;
+        & p{
+            text-align: end;
+            font-size: 18px;
+            color: $primatyColorOrange;
+            cursor: pointer;
+            transition: all .3s ease-in-out;
+            &:hover {
+                color: $primatyColorBlue;
+            }
+        }
+    }
+}
+
+@media (max-width: 420px) {
+    .todo-container {
+        width: 300px;
+    }
+}

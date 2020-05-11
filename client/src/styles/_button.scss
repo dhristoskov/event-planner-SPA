@@ -1,0 +1,10 @@
+.button-primary {
+    background-color: transparent;
+    border: none;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    outline: none;
+    color: $primatyColorBlue;
+    transition: all .4s ease-in-out;
+}
