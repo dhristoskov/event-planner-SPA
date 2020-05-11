@@ -1,3 +1,4 @@
+//Date counter 
 export const timeCountDown = (deadline) => {
     const timeLeft = Date.parse(deadline) - Date.parse(new Date());
     let hours = Math.floor( (timeLeft/(1000*60*60)) % 24 );

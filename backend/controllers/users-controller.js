@@ -4,6 +4,7 @@ const { validationResult } = require('express-validator');
 
 const User = require('../models/user');
 
+//Register new User
 const registerUser = async ( req, res ) => {
     const errors = validationResult(req);
     if(!errors.isEmpty()){
@@ -60,7 +61,7 @@ const registerUser = async ( req, res ) => {
     res.status(201).json({userId: user.id, name: user.name, token: token});
 };
 
-
+//Login User
 const loginUser = async ( req, res ) => {
     const errors = validationResult(req);
     if(!errors.isEmpty()){
