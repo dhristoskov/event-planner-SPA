@@ -1,4 +1,4 @@
-# evennt-planner-app
+# event-planner-app
  React, Express, Node, MongoDB - Event Planner App
 
   - User Authentication
