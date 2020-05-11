@@ -14,6 +14,8 @@ const Authentication = (props) => {
     const [isLoading, setIsLoadin] = useState(false);
     const { setShowModal } = props;
 
+
+    //Post Login
     const onLoginHandler = useCallback((loginUser) => {
         setIsLoadin(true);
         axios.post('/users/login', loginUser,
@@ -28,6 +30,8 @@ const Authentication = (props) => {
              });
     },[login, setShowModal]);
 
+
+    //Post Register
     const onRegisterHandler = (newUser) => {
         setIsLoadin(true)
         axios.post('/users/register', newUser, 
@@ -42,6 +46,7 @@ const Authentication = (props) => {
              })
     };
 
+    //Post Reset Password
     const onPasswordReset = (email) => {
         axios.post('/email/reset', {email: email}, 
         {'Content-Type': 'application/json'})
@@ -52,6 +57,7 @@ const Authentication = (props) => {
              });
     };
 
+    //Toggle between Login and Register Components 
     const toggleAuth = () => {
         setToggleState(prevState => !prevState)
     }
