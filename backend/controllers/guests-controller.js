@@ -1,9 +1,12 @@
 const { validationResult } = require('express-validator');
 const mongoose = require('mongoose');
 
+//Models
 const Guest = require('../models/guest');
 const Event = require('../models/event');
 
+
+//Add new Guest to Event
 const addNewGuest = async ( req, res ) => { 
     const errors = validationResult(req);
     if(!errors.isEmpty()){
@@ -48,6 +51,7 @@ const addNewGuest = async ( req, res ) => {
         res.status(201).json({ guest: newGuest });
 };
 
+//Get all guest invited to the Event
 const getGuestsByEventId = async ( req, res ) => {
 
     let guestsByEventId;
@@ -65,6 +69,7 @@ const getGuestsByEventId = async ( req, res ) => {
     res.json({ guests: guestsByEventId.guests.map(guest => guest.toObject({ getters: true })) });
 };
 
+//Get single Guest by Id
 const getGuestById = async ( req, res ) => {
 
     let guestById;
@@ -82,6 +87,8 @@ const getGuestById = async ( req, res ) => {
     res.json({guest: guestById.toObject({ getters: true}) });
 };
 
+
+//Delete Guest by Id
 const deleteGuest = async ( req, res ) => {
 
     let guestToDelete
@@ -111,6 +118,7 @@ const deleteGuest = async ( req, res ) => {
         res.status(200).json({msg: 'Guest Deleted.'});
 };
 
+//Update Guest status is it confirmed or not
 const updateStatus = async ( req, res ) => {
 
     const { isConfirmed } = req.body;
@@ -130,6 +138,7 @@ const updateStatus = async ( req, res ) => {
     }
 };
 
+//Update Guest
 const updateGuest = async ( req, res ) => {
     const errors = validationResult(req);
     if(!errors.isEmpty()){
