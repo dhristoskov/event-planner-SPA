@@ -10,6 +10,8 @@ const transport = nodemailer.createTransport(sendgridTransport({
     }
 }))
 
+
+//Send emails to Guests
 const sendEmail = async ( req, res ) => {
 
     const { nameFrom, message, email } = req.body;
@@ -28,6 +30,7 @@ const sendEmail = async ( req, res ) => {
     }
 }
 
+//Send reset token 
 const resetPassword = async ( req, res ) => {
     
     let token
