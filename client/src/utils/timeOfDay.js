@@ -1,3 +1,4 @@
+//Greetings depends on the time of the day
 const timeOfDay = () => {
 
     const date = new Date();
