@@ -1,9 +1,11 @@
 const { validationResult } = require('express-validator');
 const mongoose = require('mongoose');
 
+//Models
 const Event = require('../models/event');
 const User = require('../models/user');
 
+//Event by User ID
 const getEventsByUserID = async ( req, res ) => {
 
     let eventsByUserID;
@@ -20,6 +22,7 @@ const getEventsByUserID = async ( req, res ) => {
     res.json({ events: eventsByUserID.events.map(event => event.toObject({ getters: true })) });
 };
 
+//Single Event by ID
 const getEventById = async ( req, res ) => {
 
     let eventById;
@@ -37,6 +40,7 @@ const getEventById = async ( req, res ) => {
     res.json({event: eventById.toObject({ getters: true}) });
 };
 
+//Create Event
 const createEvent = async ( req, res ) => {
     const errors = validationResult(req);
     if(!errors.isEmpty()){
@@ -83,6 +87,7 @@ const createEvent = async ( req, res ) => {
     res.status(201).json({ event: event });
 };
 
+//Delete Event
 const deleteEvent = async ( req, res ) => {
     
     let eventToDelete;
@@ -101,6 +106,7 @@ const deleteEvent = async ( req, res ) => {
     }
 };
 
+//Update Event
 const updateEvent = async ( req, res ) => {
     const errors = validationResult(req);
     if(!errors.isEmpty()){
@@ -128,6 +134,7 @@ const updateEvent = async ( req, res ) => {
     }
 };
 
+//Update Event Status is it open or it is already closed
 const statusUpdate = async ( req, res ) => {
     const { status } = req.body;
 
