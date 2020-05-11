@@ -1,9 +1,11 @@
 const { validationResult } = require('express-validator');
 const mongoose = require('mongoose');
 
+//Models
 const Task = require('../models/task');
 const Event = require('../models/event');
 
+//Create Task to the Event
 const createTask = async ( req, res ) => { 
 
     const errors = validationResult(req);
@@ -47,6 +49,7 @@ const createTask = async ( req, res ) => {
         res.status(201).json({ task: newToDo });
 };
 
+//Get all tasks
 const getAllTasks = async ( req, res ) => {
 
     let tasks;
@@ -60,6 +63,7 @@ const getAllTasks = async ( req, res ) => {
     res.json({ tasks: tasks.map(task => task.toObject({ getters: true })) });
 };
 
+//Get all tasks that belong to the event
 const getTasksByEventId = async ( req, res ) => {
 
     let tasksByEventId;
@@ -77,6 +81,7 @@ const getTasksByEventId = async ( req, res ) => {
     res.json({ tasks: tasksByEventId.tasks.map(task => task.toObject({ getters: true })) });
 };
 
+//Delete task
 const deleteTask = async ( req, res ) => {
 
     let taskToDelete
@@ -106,6 +111,8 @@ const deleteTask = async ( req, res ) => {
         res.status(200).json({msg: 'Task Deleted.'})
 };
 
+
+//Update Task status is it Done or not
 const updateStatus = async ( req, res ) => {
 
     const { isDone } = req.body;
