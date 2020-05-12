@@ -43,6 +43,8 @@ const EventPlanner = () => {
     const [ events, dispatch ] = useReducer(eventReducer, []);
     const userId = useParams().id;
 
+
+    //Get events by User ID
     useEffect(() => {
         setIsLoading(true);
         axios.get(`/events/user/${userId}`)
@@ -55,6 +57,8 @@ const EventPlanner = () => {
              })
     }, [userId]);
   
+
+    //Add new Event
     const addNewEvent = useCallback((event) => {
         setIsLoading(true);
         axios.post('/events', event, 
@@ -68,6 +72,8 @@ const EventPlanner = () => {
              })
     }, []);
 
+
+    //Delete Event
     const deleteEvent = useCallback((eventId) => {
         setIsLoading(true);
         axios.delete(`/events/${eventId}`)
@@ -80,6 +86,7 @@ const EventPlanner = () => {
              });
     }, []);
 
+    //Change Event Status to false
     const onEventCancel = useCallback((eventId) => {
         setIsLoading(true);
         axios.patch(`/events/status/${eventId}`, {status: false},
@@ -93,6 +100,7 @@ const EventPlanner = () => {
              })    
     }, []);
 
+    //Change Event status to true
     const onEventOpen = useCallback((eventId) => {
         setIsLoading(true);
         axios.patch(`/events/status/${eventId}`, {status: true},
@@ -106,6 +114,7 @@ const EventPlanner = () => {
              });     
     }, []);
 
+    //Get single Event item
     const onEditHandler = useCallback((eventId) => {
         setIsLoading(true);
         axios.get(`/events/${eventId}`)
@@ -118,6 +127,7 @@ const EventPlanner = () => {
              });
     }, []);
 
+    //Update Event
     const onUpdateHandler = useCallback((newEvent) => {
         setIsLoading(true);
         axios.patch(`/events/${editing.id}`, newEvent,
@@ -133,6 +143,7 @@ const EventPlanner = () => {
     }, [editing]);
 
 
+    //Get ID for the Event
     const selectEventHandler = (id) => {
         history.push(`/event/${id}`)
     };
