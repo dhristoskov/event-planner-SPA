@@ -48,6 +48,7 @@ const GuestsPage = (props) => {
     const indexOfFirstItem = indexOfLastItem - itemsPerPage;
     const currentItems = guests.slice(indexOfFirstItem, indexOfLastItem);
 
+    //Get Guests by Event Id
     useEffect(() => {
         setIsLoading(true);
         axios.get(`/guests/event/${eventId}`)
@@ -60,6 +61,7 @@ const GuestsPage = (props) => {
              })
     }, [eventId]);
 
+    //Add new Guest
     const addGuest = useCallback((guest) => {    
         setIsLoading(true);
         axios.post('/guests', guest, 
@@ -73,6 +75,7 @@ const GuestsPage = (props) => {
              })
     }, []);
 
+    //Delete Guest
     const deleteGuest = useCallback((guestId) => {
         setIsLoading(true);
         axios.delete(`/guests/${guestId}`)
@@ -85,6 +88,7 @@ const GuestsPage = (props) => {
              });
     }, []);
 
+    //Change Guest status to true
     const confirmedGuest = useCallback((guestId) => {
         setIsLoading(true);
         axios.patch(`/guests/status/${guestId}`, {isConfirmed: true},
@@ -98,6 +102,7 @@ const GuestsPage = (props) => {
              });
     }, []);
 
+    //Change Guest status to false
     const unconfirmedGuest  = useCallback((guestId) => {
         setIsLoading(true);
         axios.patch(`/guests/status/${guestId}`, {isConfirmed: false},
@@ -111,6 +116,7 @@ const GuestsPage = (props) => {
              })
     }, []);
 
+    //Get single Guest item
     const onEditHandler = useCallback((guestId) => {
         setIsLoading(true);
         axios.get(`/guests/${guestId}`)
@@ -124,6 +130,7 @@ const GuestsPage = (props) => {
              });
     }, []);
 
+    //Update Guest
     const onUpdateHandler = useCallback((newGuest) => {
         setIsLoading(true);
         axios.patch(`/guests/${editing.id}`, newGuest,
@@ -138,6 +145,7 @@ const GuestsPage = (props) => {
              })
     }, [editing]);
 
+    //Send email to Guest
     const onEmailSending = (email) => {
         axios.post('/email/send', email, 
         { 'Content-Type': 'application/json' })
