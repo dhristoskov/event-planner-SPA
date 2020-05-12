@@ -37,6 +37,7 @@ const TodoPage = (props) => {
     const indexOfFirstItem = indexOfLastItem - itemsPerPage;
     const currentItems = tasks.slice(indexOfFirstItem, indexOfLastItem);
 
+    //Get Tasks by Event Id
     useEffect(() => {
         setIsLoading(true);
         axios.get(`/tasks/event/${eventId}`)
@@ -49,6 +50,7 @@ const TodoPage = (props) => {
              })
     }, [eventId])
 
+    //Add new Task
     const addNewTask = useCallback((task) => {    
         setIsLoading(true);
         axios.post('/tasks', task, 
@@ -62,6 +64,7 @@ const TodoPage = (props) => {
              })
     }, []);
 
+    //Delete Task
     const deleteTask = useCallback((taskId) => {
         setIsLoading(true);
         axios.delete(`/tasks/${taskId}`)
@@ -74,6 +77,7 @@ const TodoPage = (props) => {
              });
     }, [])
 
+    //Change Task status to true
     const doneTask = useCallback((taskId) => {
         setIsLoading(true);
         axios.patch(`/tasks/${taskId}`, {isDone : true},
@@ -87,6 +91,7 @@ const TodoPage = (props) => {
              });
     }, []);
 
+    //Change Task status to false
     const undoneTask = useCallback((taskId) => {
         setIsLoading(true);
         axios.patch(`/tasks/${taskId}`, {isDone : false},
