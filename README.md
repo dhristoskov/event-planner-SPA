@@ -1,5 +1,7 @@
 # event-planner-app
  React, Express, Node, MongoDB - Event Planner App
+ 
+![login](img/login.jpg)
 
   - User Authentication
   - Reset Password - 75% done
