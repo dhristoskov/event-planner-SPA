@@ -3,6 +3,12 @@
  
 ![login](img/login.jpg)
 
+![home](img/home.jpg)
+
+![events](img/events.jpg)
+
+![guests](img/guests.jpg)
+
   - User Authentication
   - Reset Password - 75% done
   - Event List 
