@@ -3,11 +3,26 @@
  
 ![login](img/login.jpg)
 
+ - Log-in
+ - Registration
+ - Reset Password
+
 ![home](img/home.jpg)
 
 ![events](img/events.jpg)
+ 
+ - Add Event
+ - Edit Event
+ - Delete Event
+ - Event Status ( Close/Open - invited/expected Guests - Time Left until Event start)
 
 ![guests](img/guests.jpg)
+
+ - Add Guest or Task
+ - Delete Guest or Task
+ - Update Guest
+ - Update Task or Guest status (isDone for Task, isConfirmed for Guest)
+ - Send invitation Email
 
   - User Authentication
   - Reset Password - 75% done
